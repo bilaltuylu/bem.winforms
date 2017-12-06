@@ -125,9 +125,15 @@ namespace FromApp
 
             //var li2Column = new ListViewItem(new[] { "Hasan", "Yavuz" });
             //listView1.Items.Add(li2Column);
+            comboBox1.Items.Add((View)0);
+            comboBox1.Items.Add((View)1);
+            comboBox1.Items.Add((View)2);
+            comboBox1.Items.Add((View)3);
+            comboBox1.Items.Add((View)4);
 
             listView1.SmallImageList = imageList2;
             listView1.LargeImageList = imageList2;
+           
 
         }
 
@@ -260,5 +266,40 @@ namespace FromApp
                 dictionary.Add(key, key);
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listView1.View = (View)comboBox1.SelectedItem;
+
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+            ProgresbarHesapla();
+
+        }
+        
+
+        private void güncelleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            var img = new Bitmap(openFileDialog1.FileName);
+
+            pictureBox1.Image = img;
+            ProgresbarHesapla();
+        }
+
+        private void contextMenuStrip1_Opened(object sender, CancelEventArgs e)
+        {
+            
+                güncelleToolStripMenuItem.Enabled = !(pictureBox1.Image is null);
+          }
+        
     }
+    
+//Details
+//Small Icon
+//List
+//Tile
 }
