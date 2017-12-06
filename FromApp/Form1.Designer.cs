@@ -206,7 +206,7 @@
             this.columnHeader4});
             this.listView1.FullRowSelect = true;
             this.listView1.LargeImageList = this.imageList1;
-            this.listView1.Location = new System.Drawing.Point(12, 204);
+            this.listView1.Location = new System.Drawing.Point(12, 247);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(396, 97);
             this.listView1.SmallImageList = this.imageList2;
@@ -279,7 +279,7 @@
             // progressBar1
             // 
             this.progressBar1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.progressBar1.Location = new System.Drawing.Point(12, 319);
+            this.progressBar1.Location = new System.Drawing.Point(12, 350);
             this.progressBar1.MarqueeAnimationSpeed = 0;
             this.progressBar1.Maximum = 5;
             this.progressBar1.Name = "progressBar1";
@@ -290,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 370);
+            this.ClientSize = new System.Drawing.Size(426, 424);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);

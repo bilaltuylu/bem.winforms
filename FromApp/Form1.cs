@@ -20,6 +20,7 @@ namespace FromApp
 
         private bool isUpdate;
         private int selectedRowIndex = -1;
+        private int imageListId = 0;
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
@@ -30,10 +31,11 @@ namespace FromApp
             }
 
             var li = new ListViewItem(new[] { "",txtAd.Text, txtSoyad.Text, txtKimlikNo.Text, txtUzmanlik.Text });
+            li.ImageKey = StringUret();
+            imageList2.Images.Add(li.ImageKey,pictureBox1.Image);
+            
 
-            imageList2.Images.Add(pictureBox1.Image);
-            var key=StringUret();
-            li.ImageIndex = imageList2.Images.Count - 1;
+            //li.ImageIndex = imageList2.Images.Count - 1;
 
 
             if (isUpdate)
@@ -212,7 +214,7 @@ namespace FromApp
             txtKimlikNo.Text = selectedItem.SubItems[3].Text;
             txtUzmanlik.Text = selectedItem.SubItems[4].Text;
 
-            pictureBox1.Image = imageList2.Images[selectedItem.ImageIndex];
+            pictureBox1.Image = imageList2.Images[selectedItem.ImageKey];
 
             isUpdate = true;
             selectedRowIndex = lv.SelectedIndices[0];
@@ -271,11 +273,11 @@ namespace FromApp
         private string StringUret()
         {
             Random rnd = new Random();
-            string harfler = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZabcçdefgğhıijklmnoöprsştuüvyz";
+            
             string uret = "";
             for (int i = 0; i < 3; i++)
             {
-                uret += harfler[rnd.Next(harfler.Length)];
+                uret += (char)rnd.Next(65556);
             }
             return uret;
         }
