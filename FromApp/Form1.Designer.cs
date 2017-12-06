@@ -93,7 +93,6 @@
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(104, 20);
             this.txtAd.TabIndex = 3;
- 
             this.txtAd.Leave += new System.EventHandler(this.txtAd_Leave);
             // 
             // txtSoyad
@@ -265,6 +264,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(183, 118);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button1
             // 
