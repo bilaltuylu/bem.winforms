@@ -23,6 +23,7 @@ namespace FromApp
         private bool isUpdate;
         private int selectedRowIndex = -1;
 
+
         private void btnEkle_Click(object sender, EventArgs e)
         {
             if (progressBar1.Value < 5)
@@ -125,15 +126,15 @@ namespace FromApp
 
             //var li2Column = new ListViewItem(new[] { "Hasan", "Yavuz" });
             //listView1.Items.Add(li2Column);
+
+            listView1.SmallImageList = imageList2;
+            listView1.LargeImageList = imageList2;
+
             comboBox1.Items.Add((View)0);
             comboBox1.Items.Add((View)1);
             comboBox1.Items.Add((View)2);
             comboBox1.Items.Add((View)3);
             comboBox1.Items.Add((View)4);
-
-            listView1.SmallImageList = imageList2;
-            listView1.LargeImageList = imageList2;
-           
 
         }
 
@@ -269,37 +270,48 @@ namespace FromApp
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listView1.View = (View)comboBox1.SelectedItem;
+            var comboBox = sender as ComboBox;
 
+            if(comboBox is null)
+            {
+                return;
+            }
+
+            //switch (comboBox.SelectedItem.ToString())
+            //{
+            //    case "Large Icon": listView1.View = View.LargeIcon;break;
+            //    case "Small Icon": listView1.View = View.SmallIcon;break;
+            //    case "Details": listView1.View = View.Details;break;
+            //    case "List": listView1.View = View.List;break;
+            //    case "Tiles": listView1.View = View.Tile;break;
+            //    default:
+            //        break;
+            //}
+
+            listView1.View = (View)comboBox.SelectedItem;
         }
 
-        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
             ProgresbarHesapla();
-
-        }
-        
-
-        private void güncelleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
-            var img = new Bitmap(openFileDialog1.FileName);
-
-            pictureBox1.Image = img;
-            ProgresbarHesapla();
         }
 
-        private void contextMenuStrip1_Opened(object sender, CancelEventArgs e)
+
+
+        private void yeniToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-                güncelleToolStripMenuItem.Enabled = !(pictureBox1.Image is null);
-          }
-        
+            MessageBox.Show("Yeni");
+        }
+
+        private void çıjToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_Opened(object sender, EventArgs e)
+        {
+            toolStripMenuItem2.Enabled = !(pictureBox1.Image is null);
+        }
     }
-    
-//Details
-//Small Icon
-//List
-//Tile
 }
