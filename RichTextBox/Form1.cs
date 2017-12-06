@@ -98,5 +98,99 @@ Etiam sed accumsan risus, vitae gravida ex. Donec ex risus, mollis quis pulvinar
             colorDialog1.ShowDialog();
             richTextBox1.SelectionColor = colorDialog1.Color;
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void kalınToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            if (kalınToolStripMenuItem.Checked)
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Bold);
+
+            }
+            else
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont,FontStyle.Regular);
+            }
+        }
+
+        private void italikToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (italikToolStripMenuItem.Checked)
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Italic);
+            }
+            else
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Regular);
+            }
+        }
+
+        private void altıÇiziliToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (altıÇiziliToolStripMenuItem.Checked)
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Underline);
+            }
+            else
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Regular);
+            }
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionFont = new Font("Arial", 8);
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionFont = new Font("Arial", 10);
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionFont = new Font("Arial", 12);
+
+        }
+
+    
+
+
+        private void toolStripTextBox1_Enter_1(object sender, EventArgs e)
+        {
+            var gelendeger = (int)sender;
+        }
+
+        private void toolStripTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+                if (e.KeyChar == 13)
+                {
+                var size = Convert.ToInt32(toolStripTextBox1.Text);
+                richTextBox1.SelectionFont = new Font("Arial", (int)size);
+
+            }
+        }
+
+        private void kopyalaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(richTextBox1.SelectedText);
+        }
+
+        private void yapıştırToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectedText = Clipboard.GetText();
+        }
+
+        private void kesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(richTextBox1.SelectedText);
+            richTextBox1.SelectedText = "";
+        }
     }
 }
