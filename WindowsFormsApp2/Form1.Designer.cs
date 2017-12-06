@@ -47,18 +47,20 @@
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(30, 24);
+            this.treeView1.Location = new System.Drawing.Point(22, 20);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(306, 448);
+            this.treeView1.Size = new System.Drawing.Size(230, 365);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_SelectedNode);
             // 
             // Dram
             // 
             this.Dram.AutoSize = true;
-            this.Dram.Location = new System.Drawing.Point(640, 24);
+            this.Dram.Location = new System.Drawing.Point(480, 20);
+            this.Dram.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Dram.Name = "Dram";
-            this.Dram.Size = new System.Drawing.Size(64, 21);
+            this.Dram.Size = new System.Drawing.Size(51, 17);
             this.Dram.TabIndex = 2;
             this.Dram.Text = "Dram";
             this.Dram.UseVisualStyleBackColor = true;
@@ -66,9 +68,10 @@
             // Komedi
             // 
             this.Komedi.AutoSize = true;
-            this.Komedi.Location = new System.Drawing.Point(785, 24);
+            this.Komedi.Location = new System.Drawing.Point(589, 20);
+            this.Komedi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Komedi.Name = "Komedi";
-            this.Komedi.Size = new System.Drawing.Size(77, 21);
+            this.Komedi.Size = new System.Drawing.Size(61, 17);
             this.Komedi.TabIndex = 3;
             this.Komedi.Text = "Komedi";
             this.Komedi.UseVisualStyleBackColor = true;
@@ -76,9 +79,10 @@
             // Aksiyon
             // 
             this.Aksiyon.AutoSize = true;
-            this.Aksiyon.Location = new System.Drawing.Point(640, 64);
+            this.Aksiyon.Location = new System.Drawing.Point(480, 52);
+            this.Aksiyon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Aksiyon.Name = "Aksiyon";
-            this.Aksiyon.Size = new System.Drawing.Size(79, 21);
+            this.Aksiyon.Size = new System.Drawing.Size(63, 17);
             this.Aksiyon.TabIndex = 4;
             this.Aksiyon.Text = "Aksiyon";
             this.Aksiyon.UseVisualStyleBackColor = true;
@@ -86,9 +90,10 @@
             // Gerilim
             // 
             this.Gerilim.AutoSize = true;
-            this.Gerilim.Location = new System.Drawing.Point(785, 64);
+            this.Gerilim.Location = new System.Drawing.Point(589, 52);
+            this.Gerilim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Gerilim.Name = "Gerilim";
-            this.Gerilim.Size = new System.Drawing.Size(74, 21);
+            this.Gerilim.Size = new System.Drawing.Size(57, 17);
             this.Gerilim.TabIndex = 5;
             this.Gerilim.Text = "Gerilim";
             this.Gerilim.UseVisualStyleBackColor = true;
@@ -96,9 +101,10 @@
             // Bilim
             // 
             this.Bilim.AutoSize = true;
-            this.Bilim.Location = new System.Drawing.Point(640, 108);
+            this.Bilim.Location = new System.Drawing.Point(480, 88);
+            this.Bilim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Bilim.Name = "Bilim";
-            this.Bilim.Size = new System.Drawing.Size(101, 21);
+            this.Bilim.Size = new System.Drawing.Size(78, 17);
             this.Bilim.TabIndex = 6;
             this.Bilim.Text = "Bilim Kurgu";
             this.Bilim.UseVisualStyleBackColor = true;
@@ -106,9 +112,10 @@
             // Fantastik
             // 
             this.Fantastik.AutoSize = true;
-            this.Fantastik.Location = new System.Drawing.Point(785, 109);
+            this.Fantastik.Location = new System.Drawing.Point(589, 89);
+            this.Fantastik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Fantastik.Name = "Fantastik";
-            this.Fantastik.Size = new System.Drawing.Size(87, 21);
+            this.Fantastik.Size = new System.Drawing.Size(69, 17);
             this.Fantastik.TabIndex = 7;
             this.Fantastik.Text = "Fantastik";
             this.Fantastik.UseVisualStyleBackColor = true;
@@ -116,9 +123,10 @@
             // EsaretinBedeli
             // 
             this.EsaretinBedeli.AutoSize = true;
-            this.EsaretinBedeli.Location = new System.Drawing.Point(447, 24);
+            this.EsaretinBedeli.Location = new System.Drawing.Point(335, 20);
+            this.EsaretinBedeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EsaretinBedeli.Name = "EsaretinBedeli";
-            this.EsaretinBedeli.Size = new System.Drawing.Size(124, 21);
+            this.EsaretinBedeli.Size = new System.Drawing.Size(95, 17);
             this.EsaretinBedeli.TabIndex = 8;
             this.EsaretinBedeli.TabStop = true;
             this.EsaretinBedeli.Text = "Esaretin Bedeli";
@@ -127,9 +135,10 @@
             // Idiots3
             // 
             this.Idiots3.AutoSize = true;
-            this.Idiots3.Location = new System.Drawing.Point(447, 64);
+            this.Idiots3.Location = new System.Drawing.Point(335, 52);
+            this.Idiots3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Idiots3.Name = "Idiots3";
-            this.Idiots3.Size = new System.Drawing.Size(74, 21);
+            this.Idiots3.Size = new System.Drawing.Size(59, 17);
             this.Idiots3.TabIndex = 9;
             this.Idiots3.TabStop = true;
             this.Idiots3.Text = "3 İdiots";
@@ -138,9 +147,10 @@
             // TheGoodFather
             // 
             this.TheGoodFather.AutoSize = true;
-            this.TheGoodFather.Location = new System.Drawing.Point(447, 108);
+            this.TheGoodFather.Location = new System.Drawing.Point(335, 88);
+            this.TheGoodFather.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TheGoodFather.Name = "TheGoodFather";
-            this.TheGoodFather.Size = new System.Drawing.Size(134, 21);
+            this.TheGoodFather.Size = new System.Drawing.Size(103, 17);
             this.TheGoodFather.TabIndex = 10;
             this.TheGoodFather.TabStop = true;
             this.TheGoodFather.Text = "The GoodFather";
@@ -149,9 +159,10 @@
             // FightClub
             // 
             this.FightClub.AutoSize = true;
-            this.FightClub.Location = new System.Drawing.Point(447, 151);
+            this.FightClub.Location = new System.Drawing.Point(335, 123);
+            this.FightClub.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FightClub.Name = "FightClub";
-            this.FightClub.Size = new System.Drawing.Size(92, 21);
+            this.FightClub.Size = new System.Drawing.Size(72, 17);
             this.FightClub.TabIndex = 11;
             this.FightClub.TabStop = true;
             this.FightClub.Text = "Fight Club";
@@ -160,9 +171,10 @@
             // Inception
             // 
             this.Inception.AutoSize = true;
-            this.Inception.Location = new System.Drawing.Point(447, 195);
+            this.Inception.Location = new System.Drawing.Point(335, 158);
+            this.Inception.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Inception.Name = "Inception";
-            this.Inception.Size = new System.Drawing.Size(86, 21);
+            this.Inception.Size = new System.Drawing.Size(69, 17);
             this.Inception.TabIndex = 12;
             this.Inception.TabStop = true;
             this.Inception.Text = "Inception";
@@ -171,9 +183,10 @@
             // OlaganSupheliler
             // 
             this.OlaganSupheliler.AutoSize = true;
-            this.OlaganSupheliler.Location = new System.Drawing.Point(447, 239);
+            this.OlaganSupheliler.Location = new System.Drawing.Point(335, 194);
+            this.OlaganSupheliler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OlaganSupheliler.Name = "OlaganSupheliler";
-            this.OlaganSupheliler.Size = new System.Drawing.Size(142, 21);
+            this.OlaganSupheliler.Size = new System.Drawing.Size(108, 17);
             this.OlaganSupheliler.TabIndex = 13;
             this.OlaganSupheliler.TabStop = true;
             this.OlaganSupheliler.Text = "Olağan Şüpheliler";
@@ -181,9 +194,10 @@
             // 
             // Eklebtn
             // 
-            this.Eklebtn.Location = new System.Drawing.Point(447, 303);
+            this.Eklebtn.Location = new System.Drawing.Point(335, 246);
+            this.Eklebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Eklebtn.Name = "Eklebtn";
-            this.Eklebtn.Size = new System.Drawing.Size(134, 41);
+            this.Eklebtn.Size = new System.Drawing.Size(100, 33);
             this.Eklebtn.TabIndex = 14;
             this.Eklebtn.Text = "Film Ekle";
             this.Eklebtn.UseVisualStyleBackColor = true;
@@ -191,9 +205,10 @@
             // 
             // btntur
             // 
-            this.btntur.Location = new System.Drawing.Point(738, 303);
+            this.btntur.Location = new System.Drawing.Point(554, 246);
+            this.btntur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btntur.Name = "btntur";
-            this.btntur.Size = new System.Drawing.Size(134, 41);
+            this.btntur.Size = new System.Drawing.Size(100, 33);
             this.btntur.TabIndex = 15;
             this.btntur.Text = "Tür Ekle";
             this.btntur.UseVisualStyleBackColor = true;
@@ -201,9 +216,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 501);
+            this.ClientSize = new System.Drawing.Size(724, 407);
             this.Controls.Add(this.btntur);
             this.Controls.Add(this.Eklebtn);
             this.Controls.Add(this.OlaganSupheliler);
@@ -219,6 +234,7 @@
             this.Controls.Add(this.Komedi);
             this.Controls.Add(this.Dram);
             this.Controls.Add(this.treeView1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Filmler";
             this.Load += new System.EventHandler(this.Form1_Load);
