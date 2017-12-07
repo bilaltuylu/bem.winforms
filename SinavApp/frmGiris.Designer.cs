@@ -85,15 +85,15 @@
             this.btnSinavSec.TabIndex = 4;
             this.btnSinavSec.Text = "Sınav Seç";
             this.btnSinavSec.UseVisualStyleBackColor = true;
+            this.btnSinavSec.Click += new System.EventHandler(this.btnSinavSec_Click);
             // 
             // lblSinavDosyaYolu
             // 
             this.lblSinavDosyaYolu.AutoSize = true;
             this.lblSinavDosyaYolu.Location = new System.Drawing.Point(166, 161);
             this.lblSinavDosyaYolu.Name = "lblSinavDosyaYolu";
-            this.lblSinavDosyaYolu.Size = new System.Drawing.Size(35, 13);
+            this.lblSinavDosyaYolu.Size = new System.Drawing.Size(0, 13);
             this.lblSinavDosyaYolu.TabIndex = 5;
-            this.lblSinavDosyaYolu.Text = "label2";
             // 
             // btnDevamEt
             // 
@@ -103,6 +103,7 @@
             this.btnDevamEt.TabIndex = 6;
             this.btnDevamEt.Text = "DEVAM >>";
             this.btnDevamEt.UseVisualStyleBackColor = true;
+            this.btnDevamEt.Click += new System.EventHandler(this.btnDevamEt_Click);
             // 
             // frmGiris
             // 
