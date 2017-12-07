@@ -16,7 +16,9 @@ namespace RichTextBox
         public Form1()
         {
             InitializeComponent();
+            
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -107,54 +109,39 @@ Etiam sed accumsan risus, vitae gravida ex. Donec ex risus, mollis quis pulvinar
         private void kalınToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-            if (kalınToolStripMenuItem.Checked)
-            {
-                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Bold);
+            
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont,richTextBox1.SelectionFont.Style ^FontStyle.Bold);
 
-            }
-            else
-            {
-                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont,FontStyle.Regular);
-            }
+            
         }
 
         private void italikToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (italikToolStripMenuItem.Checked)
-            {
-                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Italic);
-            }
-            else
-            {
-                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Regular);
-            }
+           
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont,richTextBox1.SelectionFont.Style ^ FontStyle.Italic);
+           
         }
 
         private void altıÇiziliToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (altıÇiziliToolStripMenuItem.Checked)
-            {
-                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Underline);
-            }
-            else
-            {
-                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Regular);
-            }
+           
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont,richTextBox1.SelectionFont.Style ^ FontStyle.Underline);
+          
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            richTextBox1.SelectionFont = new Font("Arial", 8);
+            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, 8);
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            richTextBox1.SelectionFont = new Font("Arial", 10);
+            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, 10);
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            richTextBox1.SelectionFont = new Font("Arial", 12);
+            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, 12);
 
         }
 
@@ -172,7 +159,7 @@ Etiam sed accumsan risus, vitae gravida ex. Donec ex risus, mollis quis pulvinar
                 if (e.KeyChar == 13)
                 {
                 var size = Convert.ToInt32(toolStripTextBox1.Text);
-                richTextBox1.SelectionFont = new Font("Arial", (int)size);
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, (int)size);
 
             }
         }
@@ -191,6 +178,45 @@ Etiam sed accumsan risus, vitae gravida ex. Donec ex risus, mollis quis pulvinar
         {
             Clipboard.SetText(richTextBox1.SelectedText);
             richTextBox1.SelectedText = "";
+        }
+
+        private void contextMenuStrip1_Opened(object sender, EventArgs e)
+        {
+            kalınToolStripMenuItem.Checked = richTextBox1.SelectionFont.Bold;
+            italikToolStripMenuItem.Checked = richTextBox1.SelectionFont.Italic;
+            altıÇiziliToolStripMenuItem.Checked = richTextBox1.SelectionFont.Underline;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            int kirmizi = trackBar1.Value;
+            int yesil = trackBar2.Value;
+            int mavi = trackBar3.Value;
+            richTextBox1.SelectionColor = Color.FromArgb((sender as TrackBar).Value,yesil,mavi);
+
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            int kirmizi = trackBar1.Value;
+            int yesil = trackBar2.Value;
+            int mavi = trackBar3.Value;
+            richTextBox1.SelectionColor = Color.FromArgb(kirmizi,((sender as TrackBar).Value),mavi);
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            int kirmizi = trackBar1.Value;
+            int yesil = trackBar2.Value;
+            int mavi = trackBar3.Value;
+
+            richTextBox1.SelectionColor = Color.FromArgb(kirmizi,yesil, ((sender as TrackBar).Value));
         }
     }
 }
