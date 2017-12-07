@@ -22,11 +22,12 @@ namespace SinavApp
         {
             openFileDialog1.ShowDialog();
 
-            using(var streamReader = new StreamReader(openFileDialog1.FileName))
+            using (var streamReader = new StreamReader(openFileDialog1.FileName))
             {
                 int position = 0;
                 string satir = "";
-                do {
+                do
+                {
 
                     satir = streamReader.ReadLine();
 
@@ -39,7 +40,7 @@ namespace SinavApp
 
                     label.Text = satir;
 
-                    panel1.Controls.Add(label);
+                    //panel1.Controls.Add(label);
                 } while (!string.IsNullOrWhiteSpace(satir));
             }
         }
@@ -52,18 +53,16 @@ namespace SinavApp
 
         private void btnDevamEt_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtAdSoyad.Text) && !string.IsNullOrWhiteSpace(lblSinavDosyaYolu.Text))
+            if (string.IsNullOrWhiteSpace(txtAdSoyad.Text) || string.IsNullOrWhiteSpace(lblSinavDosyaYolu.Text))
             {
-                this.Hide();
-                var frmSinavEkrani = new frmSinavEkrani();
-                frmSinavEkrani.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Lütfen Alanlar doldurunuz!!");
+                MessageBox.Show("Ad-Soyad veya Sınav Dosyası bilgileri boş olamaz.");
                 return;
-              
             }
+
+            var frmSinavEkrani = new frmSinavEkrani();
+            //this.Hide();
+
+            frmSinavEkrani.ShowDialog();
         }
     }
 }
