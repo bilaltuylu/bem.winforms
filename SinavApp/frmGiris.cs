@@ -59,10 +59,15 @@ namespace SinavApp
                 return;
             }
 
-            var frmSinavEkrani = new frmSinavEkrani();
+            var frmsinavEkrani = new frmSinavEkrani();
             //this.Hide();
+            frmsinavEkrani.AdSoyad=txtAdSoyad.Text;
+            frmsinavEkrani.Sinavyolu = lblSinavDosyaYolu.Text;
 
-            frmSinavEkrani.ShowDialog();
+            frmsinavEkrani.ShowDialog();
+            
         }
+
+        
     }
 }
