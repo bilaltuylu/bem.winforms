@@ -17,6 +17,9 @@ namespace SinavApp
         public string SinavDosyaYolu { get; set; }
         public TimeSpan SinavSüresi { get; private set; }
         public double SinavSüresiYüzdeOn { get; private set; }
+        public int grpHeight = 0;
+        public GroupBox groupBox { get; set; }
+        public RadioButton radio { get; set; }
 
         public frmSinavEkrani()
         {
@@ -39,6 +42,34 @@ namespace SinavApp
             {
                 lblSinavAdi.Text = streamReader.ReadLine();
                 lblSinavAciklama.Text = streamReader.ReadLine();
+                lblKalanZaman.Text = (TimeSpan.FromSeconds(int.Parse(streamReader.ReadLine()))).ToString();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (SinavSüresi.TotalSeconds == 0)
+            {
+                timer1.Stop();
+            }
+            this.lblKalanZaman.Text = SinavSüresi.ToString(@"hh\:mm\:ss");
+
+            if (SinavSüresi.TotalSeconds <= SinavSüresiYüzdeOn)
+            {
+                lblKalanZaman.ForeColor = Color.Red;
+            }
+            SinavSüresi = TimeSpan.FromSeconds(SinavSüresi.TotalSeconds - 1);
+        }
+
+        public void btnbaslat_Click(object sender, EventArgs e)
+        {
+           
+            btnbaslat.Enabled = false;
+
+            using (var streamReader = new StreamReader(SinavDosyaYolu))
+            {
+                lblSinavAdi.Text = streamReader.ReadLine();
+                lblSinavAciklama.Text = streamReader.ReadLine();
                 SinavSüresi = TimeSpan.FromSeconds(int.Parse(streamReader.ReadLine()));
                 SinavSüresiYüzdeOn = SinavSüresi.TotalSeconds * 0.1;
 
@@ -55,14 +86,16 @@ namespace SinavApp
 
                     top += (soruSayisi % 2 == 1) ? 350 : 0;
                     left = (soruSayisi % 2 == 1) ? 0 : 286;
-
-                    var groupBox = new GroupBox
+                    grpHeight = (soruSayisi % 2 == 1) ? 0 : grpHeight;
+                    
+                    
+                     groupBox = new GroupBox
                     {
                         Location = new Point(left, top),
-                        Size = new Size(275, 300),
+                        Size = new Size(275, grpHeight),
                         Text = $"{soruSayisi}. Soru"
                     };
-
+                    
                     var lbl = new Label
                     {
                         Text = items[0],
@@ -70,51 +103,73 @@ namespace SinavApp
                         AutoSize = true,
                         Location = new Point(15, 15)
                     };
+                    
+                    int radioTop = lbl.Location.Y + lbl.PreferredHeight + 15;
 
-                    int radioTop = lbl.Location.Y+ lbl.PreferredHeight +15;
-
-                    for (int i = 1; i < items.Length-1; i++)
+                    for (int i = 1; i < items.Length - 1; i++)
                     {
-                        var radio = new RadioButton
+                         radio = new RadioButton
                         {
                             Text = items[i],
                             Location = new Point(20, radioTop),
-                            Enabled = false,
+                            Enabled = true,
                             AutoSize = true,
-                            MaximumSize = new Size(200,0)
+                            MaximumSize = new Size(200, 0),
+                            Tag=soruSayisi
                         };
 
                         groupBox.Controls.Add(radio);
-
+                        
+                       
                         radioTop += 30;
+                    
                     }
-
+                    if (grpHeight<=lbl.PreferredHeight+radioTop)
+                    {
+                        grpHeight = lbl.PreferredHeight + radioTop;
+                        groupBox.Height = grpHeight;
+                            
+                    }
+                    else
+                    {
+                        groupBox.Height = grpHeight;
+                    }
                     groupBox.Controls.Add(lbl);
 
                     pnlSorular.Controls.Add(groupBox);
-
+                    
+                    
                 };
-
+               
 
                 //timer1.Interval = 1;
             }
-
+            
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (SinavSüresi.TotalSeconds == 0)
-            {
-                timer1.Stop();
-            }
-            this.lblKalanZaman.Text = SinavSüresi.ToString(@"hh\:mm\:ss");
+        private void btnbitir_Click(object sender, EventArgs e)
+        {   
+           
+            var kisiadi = lblAdSoyad.Text.Split(' ');
+            StreamWriter cevap = File.CreateText($"C:\\cevaplar\\{lblSinavAdi.Text}-{kisiadi[0]}-{kisiadi[1]}.txt");
+            //radio.Checked
+            //saveFileDialog1.FileName = ($"C:\\{lblSinavAdi.Text}-{kisiadi[0]}-{kisiadi[1]}.txt");
 
-            if (SinavSüresi.TotalSeconds <= SinavSüresiYüzdeOn)
-            {
-                lblKalanZaman.ForeColor = Color.Red;
-            }
-            SinavSüresi = TimeSpan.FromSeconds(SinavSüresi.TotalSeconds - 1);
+            btnbitir.Enabled = false;
+           
+            timer1.Stop();
+            pnlSorular.Enabled = false;
+            
+
+
+          
+         
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
